@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Envanter Yönetimi</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="~/Content/signin.css" rel="stylesheet" />
+    
+</head>
+<body class="text-center">
+    <main class="form-signin">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <img class="mb-4" src="~/images/sesa2.png" alt="" width="288" height="288">
+            @Html.Label("inputUser", htmlAttributes: new { @class = "visually-hidden" })
+            @Html.TextBox("user", "", new { @class = "form-control", @placeholder = "Kullanıcı adı" })
+
+
+            @Html.Label("inputPassword", htmlAttributes: new { @class = "visually-hidden" })
+            @Html.Password("pass", "", new { @class = "form-control", @placeholder = "Şifre" })
+            @Html.ValidationMessage("passs", "", new { @class = "text-danger" });
+            @Html.ValidationMessage("userr", "", new { @class = "text-danger" });
+
+
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Giriş</button>
+            <p class="mt-5 mb-3 text-muted">&copy; AYÜ - 2020</p>
+
+        }
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+</body>
+</html>

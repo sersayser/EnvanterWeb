@@ -1,0 +1,53 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Envanter Yönetimi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="~/Content/navbar-top-fixed.css" rel="stylesheet" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <div class="navbar-brand">Envanter Yönetimi</div>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-info" aria-current="page" href="#">Anasayfa</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <div class="form-control mx-2">@Session["login"].ToString()</div>
+                    <a class="btn btn-outline-danger" href="/home" type="button">Çıkış</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container-fluid">
+        <div class="bg-light p-5 rounded">
+            <h1>@Session["login"].ToString() Hoşgeldiniz</h1>
+
+            <p class="lead"><b> @DateTime.Now.ToString("dddd, dd MMMM yyyy")</b></p>
+            <a class="btn btn-lg btn-primary p-1" role="button">@DateTime.Now.ToString("hh:mm tt") &raquo;</a>
+        </div>
+
+
+        <div class="p-5">
+            @RenderBody()
+        </div>
+
+   
+
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
